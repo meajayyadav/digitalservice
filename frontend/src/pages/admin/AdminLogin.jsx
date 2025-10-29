@@ -24,8 +24,9 @@ const AdminLogin = () => {
         await login(formData.email, formData.password);
         toast.success('Login successful!');
       } else {
-        const { signup } = await import('@/contexts/AuthContext');
-        await signup(formData.email, formData.password, formData.name);
+        const { useAuth } = await import('@/contexts/AuthContext');
+        const { signup: signupFunc } = useAuth();
+        await signupFunc(formData.email, formData.password, formData.name);
         toast.success('Account created successfully!');
       }
       navigate('/admin/dashboard');
