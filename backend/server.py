@@ -1,12 +1,12 @@
-from fastapi import FastAPI, APIRouter
+from fastapi import FastAPI, APIRouter, HTTPException
 from dotenv import load_dotenv
 from starlette.middleware.cors import CORSMiddleware
 from motor.motor_asyncio import AsyncIOMotorClient
 import os
 import logging
 from pathlib import Path
-from pydantic import BaseModel, Field, ConfigDict
-from typing import List
+from pydantic import BaseModel, Field, ConfigDict, EmailStr
+from typing import List, Optional
 import uuid
 from datetime import datetime, timezone
 
@@ -37,6 +37,29 @@ class StatusCheck(BaseModel):
 class StatusCheckCreate(BaseModel):
     client_name: str
 
+
+# Contact Form Models
+class ContactSubmission(BaseModel):
+    model_config = ConfigDict(extra="ignore")
+    
+    id: str = Field(default_factory=lambda: str(uuid.uuid4()))
+    name: str
+    email: EmailStr
+    phone: str
+    service_interest: str
+    budget: str
+    message: str
+    timestamp: datetime = Field(default_factory=lambda: datetime.now(timezone.utc))
+
+class ContactSubmissionCreate(BaseModel):
+    name: str
+    email: EmailStr
+    phone: str
+    service_interest: str
+    budget: str
+    message: str
+
+
 # Add your routes to the router instead of directly to app
 @api_router.get("/")
 async def root():
@@ -65,6 +88,43 @@ async def get_status_checks():
             check['timestamp'] = datetime.fromisoformat(check['timestamp'])
     
     return status_checks
+
+
+# Contact Form Endpoints
+@api_router.post("/contact", response_model=ContactSubmission)
+async def create_contact_submission(input: ContactSubmissionCreate):
+    """Submit a contact form"""
+    try:
+        contact_dict = input.model_dump()
+        contact_obj = ContactSubmission(**contact_dict)
+        
+        # Convert to dict and serialize datetime to ISO string for MongoDB
+        doc = contact_obj.model_dump()
+        doc['timestamp'] = doc['timestamp'].isoformat()
+        
+        _ = await db.contact_submissions.insert_one(doc)
+        return contact_obj
+    except Exception as e:
+        logger.error(f"Error creating contact submission: {e}")
+        raise HTTPException(status_code=500, detail="Failed to submit contact form")
+
+@api_router.get("/contact", response_model=List[ContactSubmission])
+async def get_contact_submissions():
+    """Get all contact form submissions"""
+    try:
+        # Exclude MongoDB's _id field from the query results
+        submissions = await db.contact_submissions.find({}, {"_id": 0}).to_list(1000)
+        
+        # Convert ISO string timestamps back to datetime objects
+        for submission in submissions:
+            if isinstance(submission['timestamp'], str):
+                submission['timestamp'] = datetime.fromisoformat(submission['timestamp'])
+        
+        return submissions
+    except Exception as e:
+        logger.error(f"Error fetching contact submissions: {e}")
+        raise HTTPException(status_code=500, detail="Failed to fetch contact submissions")
+
 
 # Include the router in the main app
 app.include_router(api_router)
