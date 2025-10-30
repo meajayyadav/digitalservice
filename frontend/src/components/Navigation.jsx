@@ -37,9 +37,9 @@ const Navigation = () => {
           {/* Logo */}
           <Link to="/" className="flex items-center space-x-2" data-testid="nav-logo">
             <div className="w-10 h-10 bg-gradient-to-br from-cyan-500 to-blue-500 rounded-lg flex items-center justify-center">
-              <span className="text-white font-bold text-xl">D</span>
+              <span className="text-white font-bold text-xl">A</span>
             </div>
-            <span className="text-2xl font-bold gradient-text">DigiServices</span>
+            <span className="text-2xl font-bold gradient-text">Ajay YTS</span>
           </Link>
 
           {/* Desktop Navigation */}
