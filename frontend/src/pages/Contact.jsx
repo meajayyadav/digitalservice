@@ -28,11 +28,11 @@ const Contact = () => {
   ];
 
   const budgetRanges = [
-    'Less than $1,000',
-    '$1,000 - $5,000',
-    '$5,000 - $10,000',
-    '$10,000 - $25,000',
-    'More than $25,000'
+    'Less than ₹1,0000',
+    '₹5,000 - ₹10,000',
+    '₹10,000 - ₹15,000',
+    '₹15,000 - ₹25,000',
+    'More than ₹25,000'
   ];
 
   const handleChange = (e) => {
@@ -102,8 +102,8 @@ const Contact = () => {
                 </div>
                 <div>
                   <h3 className="font-semibold text-slate-800 mb-1">Email Us</h3>
-                  <p className="text-slate-600">hello@digiservices.com</p>
-                  <p className="text-slate-600">support@digiservices.com</p>
+                  <p className="text-slate-600">me.ajayadav@gmail.com</p>
+                  <p className="text-slate-600">support@ajayyts.com</p>
                 </div>
               </div>
 
@@ -113,7 +113,7 @@ const Contact = () => {
                 </div>
                 <div>
                   <h3 className="font-semibold text-slate-800 mb-1">Call Us</h3>
-                  <p className="text-slate-600">+1 (555) 123-4567</p>
+                  <p className="text-slate-600">6204013196</p>
                   <p className="text-slate-600 text-sm">Mon-Fri, 9am-6pm EST</p>
                 </div>
               </div>
@@ -124,8 +124,8 @@ const Contact = () => {
                 </div>
                 <div>
                   <h3 className="font-semibold text-slate-800 mb-1">Visit Us</h3>
-                  <p className="text-slate-600">123 Digital Street</p>
-                  <p className="text-slate-600">Tech City, TC 12345</p>
+                  <p className="text-slate-600">6 cross sudhama nagar</p>
+                  <p className="text-slate-600">Tech City, Bangalore 560037</p>
                 </div>
               </div>
             </div>
@@ -159,7 +159,7 @@ const Contact = () => {
                     onChange={handleChange}
                     required
                     className="w-full px-4 py-3 border border-slate-300 rounded-lg focus:ring-2 focus:ring-cyan-500 focus:border-transparent transition-all"
-                    placeholder="John Doe"
+                    placeholder="Ajay Yadav"
                   />
                 </div>
 
@@ -177,7 +177,7 @@ const Contact = () => {
                     onChange={handleChange}
                     required
                     className="w-full px-4 py-3 border border-slate-300 rounded-lg focus:ring-2 focus:ring-cyan-500 focus:border-transparent transition-all"
-                    placeholder="john@example.com"
+                    placeholder="ajay@example.com"
                   />
                 </div>
 
@@ -195,7 +195,7 @@ const Contact = () => {
                     onChange={handleChange}
                     required
                     className="w-full px-4 py-3 border border-slate-300 rounded-lg focus:ring-2 focus:ring-cyan-500 focus:border-transparent transition-all"
-                    placeholder="+1 (555) 123-4567"
+                    placeholder="6204013196"
                   />
                 </div>
 
@@ -280,7 +280,7 @@ const Contact = () => {
         <div className="card bg-gradient-to-br from-cyan-100 to-blue-100 h-64 flex items-center justify-center">
           <div className="text-center">
             <MapPin className="w-16 h-16 text-cyan-500 mx-auto mb-4" />
-            <p className="text-slate-700 font-semibold">123 Digital Street, Tech City, TC 12345</p>
+            <p className="text-slate-700 font-semibold">6 cross sudhama nagar, Tech Bangalore, PIN 560037</p>
           </div>
         </div>
       </section>

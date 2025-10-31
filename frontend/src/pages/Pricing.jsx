@@ -5,7 +5,7 @@ const Pricing = () => {
   const plans = [
     {
       name: 'Starter',
-      price: '499',
+      price: '5000',
       description: 'Perfect for small businesses and startups',
       features: [
         'Basic website (up to 5 pages)',
@@ -19,7 +19,7 @@ const Pricing = () => {
     },
     {
       name: 'Professional',
-      price: '1,499',
+      price: '15000',
       description: 'Ideal for growing businesses',
       features: [
         'Advanced website (up to 15 pages)',
@@ -52,12 +52,12 @@ const Pricing = () => {
   ];
 
   const addons = [
-    { name: 'Logo Design', price: '$299' },
-    { name: 'Social Media Marketing (monthly)', price: '$799' },
-    { name: 'Content Writing (per page)', price: '$99' },
-    { name: 'Advanced SEO Package', price: '$599/month' },
-    { name: 'Mobile App Development', price: '$2,999+' },
-    { name: 'Maintenance Package (monthly)', price: '$199' }
+    { name: 'Logo Design', price: '₹299' },
+    { name: 'Social Media Marketing (monthly)', price: '₹799' },
+    { name: 'Content Writing (per page)', price: '₹99' },
+    { name: 'Advanced SEO Package', price: '₹599/month' },
+    { name: 'Mobile App Development', price: '₹2,999+' },
+    { name: 'Maintenance Package (monthly)', price: '₹199' }
   ];
 
   return (
@@ -97,7 +97,7 @@ const Pricing = () => {
                 <p className="text-slate-600 text-sm mb-4">{plan.description}</p>
                 <div className="flex items-baseline justify-center">
                   {plan.price !== 'Custom' && (
-                    <span className="text-xl text-slate-600">$</span>
+                    <span className="text-xl text-slate-600">₹</span>
                   )}
                   <span className="text-5xl font-bold gradient-text">{plan.price}</span>
                   {plan.price !== 'Custom' && (

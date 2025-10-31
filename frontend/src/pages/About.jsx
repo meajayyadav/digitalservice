@@ -1,4 +1,5 @@
 import { Target, Users, Award, Heart } from 'lucide-react';
+import ajayImg from '../assets/ajayceo.jpeg';
 
 const About = () => {
   const values = [
@@ -25,10 +26,10 @@ const About = () => {
   ];
 
   const team = [
-    { name: 'Sarah Johnson', role: 'CEO & Founder', image: 'SJ' },
-    { name: 'Michael Chen', role: 'CTO', image: 'MC' },
-    { name: 'Emily Rodriguez', role: 'Design Director', image: 'ER' },
-    { name: 'David Park', role: 'Marketing Head', image: 'DP' }
+    { name: 'Ajay Yadav', role: 'CEO & Founder', image: ajayImg },
+    { name: 'Sanjay Yadav', role: 'CTO', image: 'SY' },
+    { name: 'Sandeep Ahir', role: 'Design Director', image: 'SA' },
+    { name: 'Satyam kumar', role: 'Marketing Head', image: 'SK' }
   ];
 
   return (
@@ -37,7 +38,7 @@ const About = () => {
       <section className="section bg-gradient-to-br from-cyan-50 to-blue-50" data-testid="about-hero-section">
         <div className="text-center max-w-3xl mx-auto">
           <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold mb-6">
-            About <span className="gradient-text">DigiServices</span>
+            About <span className="gradient-text">Ajay YTS</span>
           </h1>
           <p className="text-base sm:text-lg text-slate-600 leading-relaxed">
             We are a team of passionate digital experts committed to transforming businesses through 
@@ -54,7 +55,7 @@ const About = () => {
             <h2 className="text-3xl md:text-4xl font-bold mb-6">Our Story</h2>
             <div className="space-y-4 text-slate-600 leading-relaxed">
               <p>
-                Founded in 2014, DigiServices started with a simple mission: to make high-quality 
+                Founded in 2025, Ajay YTS started with a simple mission: to make high-quality 
                 digital services accessible to businesses of all sizes. What began as a small web 
                 development studio has grown into a full-service digital agency.
               </p>
@@ -72,9 +73,9 @@ const About = () => {
           <div className="relative">
             <div className="aspect-square rounded-2xl bg-gradient-to-br from-cyan-100 to-blue-100 p-8 flex items-center justify-center">
               <div className="text-center">
-                <div className="text-6xl font-bold gradient-text mb-4">2014</div>
+                <div className="text-6xl font-bold gradient-text mb-4">2025</div>
                 <div className="text-xl font-semibold text-slate-700">Founded</div>
-                <div className="text-slate-600 mt-4">10+ Years of Digital Excellence</div>
+                <div className="text-slate-600 mt-4">5+ Years of Digital Excellence</div>
               </div>
             </div>
           </div>
@@ -111,9 +112,14 @@ const About = () => {
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
           {team.map((member, index) => (
             <div key={index} className="text-center" data-testid={`team-member-${index}`}>
-              <div className="w-40 h-40 mx-auto mb-4 rounded-full bg-gradient-to-br from-cyan-400 to-blue-500 flex items-center justify-center text-white text-3xl font-bold">
-                {member.image}
-              </div>
+              <div className="w-40 h-40 mx-auto mb-4 rounded-full bg-gradient-to-br from-cyan-400 to-blue-500 flex items-center justify-center text-white text-3xl font-bold overflow-hidden">
+          {typeof member.image === 'string' && member.image.startsWith('/')
+            ? <img src={member.image} alt={member.name} className="w-full h-full object-cover" />
+            : typeof member.image === 'string' && member.image.length <= 3
+              ? member.image
+              : <img src={member.image} alt={member.name} className="w-full h-full object-cover" />
+          }
+        </div>
               <h3 className="text-xl font-semibold mb-1">{member.name}</h3>
               <p className="text-cyan-500 font-medium">{member.role}</p>
             </div>
@@ -129,10 +135,10 @@ const About = () => {
         </div>
         <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
           {[
-            { number: '500+', label: 'Projects Delivered' },
-            { number: '350+', label: 'Happy Clients' },
-            { number: '50+', label: 'Team Members' },
-            { number: '15+', label: 'Industry Awards' }
+            { number: '50+', label: 'Projects Delivered' },
+            { number: '10+', label: 'Happy Clients' },
+            { number: '15+', label: 'Team Members' },
+            { number: '5+', label: 'Industry Awards' }
           ].map((stat, index) => (
             <div key={index} className="text-center" data-testid={`achievement-stat-${index}`}>
               <div className="text-4xl md:text-5xl font-bold mb-2">{stat.number}</div>

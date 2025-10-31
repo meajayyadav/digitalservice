@@ -45,10 +45,10 @@ const Portfolio = () => {
   ];
 
   const stats = [
-    { number: '500+', label: 'Projects Completed' },
+    { number: '50+', label: 'Projects Completed' },
     { number: '50+', label: 'Industries Served' },
     { number: '98%', label: 'Client Satisfaction' },
-    { number: '250+', label: 'Five-Star Reviews' }
+    { number: '100+', label: 'Five-Star Reviews' }
   ];
 
   return (

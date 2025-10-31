@@ -7,7 +7,7 @@ const Testimonials = () => {
       role: 'CEO, TechStart Inc',
       image: 'JM',
       rating: 5,
-      text: 'DigiServices transformed our online presence completely. Their team is professional, creative, and truly understands business needs. Our website traffic increased by 300% within 3 months!'
+      text: 'Ajay YTS transformed our online presence completely. Their team is professional, creative, and truly understands business needs. Our website traffic increased by 300% within 3 months!'
     },
     {
       name: 'Robert Chen',

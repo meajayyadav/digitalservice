@@ -12,9 +12,9 @@ const Footer = () => {
           <div className="space-y-4">
             <div className="flex items-center space-x-2">
               <div className="w-10 h-10 bg-gradient-to-br from-cyan-500 to-blue-500 rounded-lg flex items-center justify-center">
-                <span className="text-white font-bold text-xl">D</span>
+                <span className="text-white font-bold text-xl">A</span>
               </div>
-              <span className="text-2xl font-bold">DigiServices</span>
+              <span className="text-2xl font-bold">Ajay YTS</span>
             </div>
             <p className="text-slate-400 text-sm leading-relaxed">
               Transforming businesses through innovative digital solutions. Your success is our mission.
@@ -64,15 +64,15 @@ const Footer = () => {
             <ul className="space-y-3">
               <li className="flex items-start space-x-3 text-slate-400 text-sm">
                 <MapPin className="w-5 h-5 flex-shrink-0 mt-0.5" />
-                <span>123 Digital Street, Tech City, TC 12345</span>
+                <span>6 cross sudhama nagar, Tech City, Bangalore 560037</span>
               </li>
               <li className="flex items-center space-x-3 text-slate-400 text-sm">
                 <Phone className="w-5 h-5 flex-shrink-0" />
-                <span>+1 (555) 123-4567</span>
+                <span>6204013196</span>
               </li>
               <li className="flex items-center space-x-3 text-slate-400 text-sm">
                 <Mail className="w-5 h-5 flex-shrink-0" />
-                <span>hello@digiservices.com</span>
+                <span>me.ajayadav@gmail.com</span>
               </li>
             </ul>
           </div>
@@ -81,7 +81,7 @@ const Footer = () => {
         {/* Bottom Bar */}
         <div className="border-t border-slate-800 mt-12 pt-8 text-center">
           <p className="text-slate-400 text-sm">
-            © {currentYear} DigiServices. All rights reserved.
+            © {currentYear} Ajay YTS. All rights reserved.
           </p>
         </div>
       </div>

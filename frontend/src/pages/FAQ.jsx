@@ -13,7 +13,7 @@ const FAQ = () => {
       category: 'General',
       questions: [
         {
-          q: 'What services does DigiServices offer?',
+          q: 'What services does Ajay YTS offer?',
           a: 'We offer a comprehensive range of digital services including web development, mobile app development, graphic design, social media setup and management, Google SEO, and digital marketing solutions.'
         },
         {
@@ -65,7 +65,7 @@ const FAQ = () => {
       questions: [
         {
           q: 'Do you provide ongoing support?',
-          a: 'Yes! All our packages include initial support (duration varies by package). We also offer ongoing maintenance plans starting at $199/month for continued support, updates, and monitoring.'
+          a: 'Yes! All our packages include initial support (duration varies by package). We also offer ongoing maintenance plans starting at ₹999/month for continued support, updates, and monitoring.'
         },
         {
           q: 'What if something breaks after launch?',
